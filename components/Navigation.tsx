@@ -36,7 +36,7 @@ export const TopNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) =
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => handleScroll('home', setActiveTab)}
         >
-          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-lg shadow-church-200 group-hover:scale-105 transition-transform">
+          <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform p-1">
             <Logo className="w-full h-full" />
           </div>
           <div>

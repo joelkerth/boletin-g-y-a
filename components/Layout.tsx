@@ -54,7 +54,7 @@ export const Layout: React.FC = () => {
       {/* Mobile Top Header */}
       <div className="md:hidden px-4 py-4 flex items-center justify-between bg-white border-b border-slate-100 sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">
+          <div className="w-10 h-10 flex items-center justify-center p-1">
             <Logo className="w-full h-full" />
           </div>
           <span className="font-bold text-slate-800">Gracia y Amor</span>
