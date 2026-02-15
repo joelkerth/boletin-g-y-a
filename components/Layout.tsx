@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TopNav, MobileNav } from './Navigation';
+import { Logo } from './Logo';
 import { HomeView } from '../views/HomeView';
 import { ReflectionsView } from '../views/ReflectionsView';
 import { EventsView } from '../views/EventsView';
@@ -53,8 +54,8 @@ export const Layout: React.FC = () => {
       {/* Mobile Top Header */}
       <div className="md:hidden px-4 py-4 flex items-center justify-between bg-white border-b border-slate-100 sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="w-8 h-8 bg-church-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
-            G
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">
+            <Logo className="w-full h-full" />
           </div>
           <span className="font-bold text-slate-800">Gracia y Amor</span>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Home, BookOpen, Calendar, Users, Heart, Download } from './Icons';
+import { Logo } from './Logo';
 
 type Tab = 'home' | 'reflections' | 'events' | 'services' | 'community';
 
@@ -17,13 +18,13 @@ const navItems = [
 ] as const;
 
 const handleScroll = (id: string, setActiveTab: (tab: Tab) => void) => {
-    const element = document.getElementById(id);
-    if (element) {
-        // Update state immediately for visual feedback
-        setActiveTab(id as Tab);
-        // Scroll to element
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const element = document.getElementById(id);
+  if (element) {
+    // Update state immediately for visual feedback
+    setActiveTab(id as Tab);
+    // Scroll to element
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 };
 
 export const TopNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) => {
@@ -31,12 +32,12 @@ export const TopNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) =
     <nav className="hidden md:block sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all shadow-sm">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div 
-            className="flex items-center gap-3 cursor-pointer group" 
-            onClick={() => handleScroll('home', setActiveTab)}
+        <div
+          className="flex items-center gap-3 cursor-pointer group"
+          onClick={() => handleScroll('home', setActiveTab)}
         >
-          <div className="w-10 h-10 bg-church-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-church-200 group-hover:scale-105 transition-transform">
-            G
+          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-lg shadow-church-200 group-hover:scale-105 transition-transform">
+            <Logo className="w-full h-full" />
           </div>
           <div>
             <h1 className="font-bold text-slate-800 leading-tight">Gracia y Amor</h1>
@@ -53,11 +54,10 @@ export const TopNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) =
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id, setActiveTab)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${
-                  isActive 
-                    ? 'bg-white text-church-700 shadow-sm ring-1 ring-slate-200 scale-105' 
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-200/50'
-                }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${isActive
+                  ? 'bg-white text-church-700 shadow-sm ring-1 ring-slate-200 scale-105'
+                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-200/50'
+                  }`}
               >
                 <Icon size={18} className={isActive ? 'text-church-600' : ''} />
                 <span>{item.label}</span>
@@ -67,7 +67,7 @@ export const TopNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }) =
         </div>
 
         {/* Action */}
-        <button 
+        <button
           onClick={() => alert("Simulando descarga de PDF...")}
           className="flex items-center gap-2 px-4 py-2.5 bg-slate-900 text-white rounded-xl text-sm font-medium hover:bg-slate-800 transition-all hover:-translate-y-0.5 shadow-lg shadow-slate-200"
         >
@@ -89,9 +89,8 @@ export const MobileNav: React.FC<NavigationProps> = ({ activeTab, setActiveTab }
           <button
             key={item.id}
             onClick={() => handleScroll(item.id, setActiveTab)}
-            className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
-              isActive ? 'text-church-600 bg-church-50' : 'text-slate-400'
-            }`}
+            className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${isActive ? 'text-church-600 bg-church-50' : 'text-slate-400'
+              }`}
           >
             <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
             <span className="text-[10px] font-medium">{item.label}</span>
