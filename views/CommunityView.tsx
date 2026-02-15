@@ -6,11 +6,15 @@ export const CommunityView: React.FC = () => {
   return (
     <div className="animate-fade-in space-y-12 pb-12">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-slate-200 pb-8">
         <div>
-           <h2 className="text-sm font-bold text-church-600 uppercase tracking-widest mb-2">Familia</h2>
-           <h3 className="text-3xl font-bold text-slate-900">Vida en Comunidad</h3>
+           <h2 className="text-sm font-bold text-church-600 uppercase tracking-widest mb-3">Familia</h2>
+           <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight">Vida en Comunidad</h3>
         </div>
+        <p className="text-slate-500 max-w-sm text-sm md:text-right leading-relaxed">
+            "Sobrellevad los unos las cargas de los otros, y cumplid así la ley de Cristo."
+        </p>
       </div>
 
       {/* SECTION 1: PRAYER WALL (Full Width) */}

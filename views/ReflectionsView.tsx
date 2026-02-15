@@ -7,7 +7,20 @@ export const ReflectionsView: React.FC = () => {
 
   return (
     <div className="w-full space-y-12 pb-24 md:pb-8 animate-fade-in">
-      
+
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-slate-200 pb-8">
+        <div>
+          <h2 className="text-sm font-bold text-church-600 uppercase tracking-widest mb-3">Alimento Espiritual</h2>
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight">
+            Reflexiones
+          </h3>
+        </div>
+        <p className="text-slate-500 max-w-sm text-sm md:text-right leading-relaxed">
+          "Lámpara es a mis pies tu palabra, Y lumbrera a mi camino."
+        </p>
+      </div>
+
       {/* Main Sermon */}
       <article className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
         <div className="h-64 md:h-80 bg-[url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center relative">
@@ -39,13 +52,13 @@ export const ReflectionsView: React.FC = () => {
               </div>
             </div>
             <div className="md:w-2/3 prose prose-slate prose-lg max-w-none">
-               <p className="lead text-xl text-slate-600 mb-6">{mainReflection.excerpt}</p>
-               {mainReflection.content.map((paragraph, idx) => (
-                 <p key={idx} className="mb-4 text-slate-700 leading-relaxed">{paragraph}</p>
-               ))}
+              <p className="lead text-xl text-slate-600 mb-6">{mainReflection.excerpt}</p>
+              {mainReflection.content.map((paragraph, idx) => (
+                <p key={idx} className="mb-4 text-slate-700 leading-relaxed">{paragraph}</p>
+              ))}
             </div>
           </div>
-          
+
           <div className="bg-church-50 rounded-xl p-6">
             <h3 className="font-bold text-church-800 mb-3">Conclusiones Clave</h3>
             <ul className="space-y-2">
@@ -57,7 +70,7 @@ export const ReflectionsView: React.FC = () => {
                 <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-church-500 shrink-0"></div>
                 <span>Sin ella, el cristianismo son solo enseñanzas morales sin poder.</span>
               </li>
-               <li className="flex gap-2 text-church-900">
+              <li className="flex gap-2 text-church-900">
                 <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-church-500 shrink-0"></div>
                 <span>Garantiza nuestra esperanza eterna.</span>
               </li>
@@ -102,8 +115,8 @@ export const ReflectionsView: React.FC = () => {
             La historia del pueblo de Dios no avanza al azar, sino bajo el gobierno justo y soberano del Señor. La idolatría es la raíz de la ruina.
           </p>
           <div className="bg-slate-50 p-4 rounded-lg">
-             <p className="font-medium text-slate-800 text-sm">Enfoque Central:</p>
-             <p className="text-slate-600 text-sm italic">"Reconocer la fragilidad del gobierno humano y esperar al Rey fiel y eterno."</p>
+            <p className="font-medium text-slate-800 text-sm">Enfoque Central:</p>
+            <p className="text-slate-600 text-sm italic">"Reconocer la fragilidad del gobierno humano y esperar al Rey fiel y eterno."</p>
           </div>
         </div>
       </div>

@@ -5,11 +5,16 @@ import { Users, Music, Coffee, HandHeart, Calendar } from '../components/Icons';
 export const ServiceView: React.FC = () => {
   return (
     <div className="w-full space-y-8 pb-24 md:pb-8 animate-fade-in">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-slate-200 pb-8">
         <div>
-          <h2 className="text-3xl font-bold text-slate-900">Asignaciones</h2>
-          <p className="text-slate-500">Roles de servicio para el mes de {APP_DATA.month}</p>
+          <h2 className="text-sm font-bold text-church-600 uppercase tracking-widest mb-3">Ministerios</h2>
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight">
+            Asignaciones
+          </h3>
         </div>
+        <p className="text-slate-500 max-w-sm text-sm md:text-right leading-relaxed">
+          Roles de servicio para el mes de {APP_DATA.month}
+        </p>
       </div>
 
       {/* Weekly Rotations */}
@@ -20,7 +25,7 @@ export const ServiceView: React.FC = () => {
               <Calendar className="text-church-500" size={18} />
               <h3 className="font-bold text-lg text-slate-800">{week.date}</h3>
             </div>
-            
+
             <div className="space-y-4">
               {week.roles.map((roleItem, rIndex) => (
                 <div key={rIndex}>
@@ -37,29 +42,29 @@ export const ServiceView: React.FC = () => {
       <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4">Equipos Permanentes</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {APP_DATA.permanentRoles.map((group, idx) => {
-            let Icon = Users;
-            let color = "bg-slate-100 text-slate-600";
-            if (group.role === 'Ujieres') { Icon = HandHeart; color = "bg-orange-100 text-orange-600"; }
-            if (group.role === 'Café') { Icon = Coffee; color = "bg-amber-100 text-amber-700"; }
-            if (group.role === 'Santa Cena') { Icon = Users; color = "bg-rose-100 text-rose-700"; }
+          let Icon = Users;
+          let color = "bg-slate-100 text-slate-600";
+          if (group.role === 'Ujieres') { Icon = HandHeart; color = "bg-orange-100 text-orange-600"; }
+          if (group.role === 'Café') { Icon = Coffee; color = "bg-amber-100 text-amber-700"; }
+          if (group.role === 'Santa Cena') { Icon = Users; color = "bg-rose-100 text-rose-700"; }
 
-            return (
-                <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 flex items-start gap-4">
-                    <div className={`p-3 rounded-xl ${color}`}>
-                        <Icon size={24} />
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-slate-800 mb-2">{group.role}</h4>
-                        <div className="flex flex-wrap gap-2">
-                            {group.people.map((person, pIdx) => (
-                                <span key={pIdx} className="inline-block bg-slate-50 px-2 py-1 rounded text-sm text-slate-600 border border-slate-100">
-                                    {person}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+          return (
+            <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 flex items-start gap-4">
+              <div className={`p-3 rounded-xl ${color}`}>
+                <Icon size={24} />
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 mb-2">{group.role}</h4>
+                <div className="flex flex-wrap gap-2">
+                  {group.people.map((person, pIdx) => (
+                    <span key={pIdx} className="inline-block bg-slate-50 px-2 py-1 rounded text-sm text-slate-600 border border-slate-100">
+                      {person}
+                    </span>
+                  ))}
                 </div>
-            )
+              </div>
+            </div>
+          )
         })}
       </div>
     </div>

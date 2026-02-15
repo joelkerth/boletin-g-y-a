@@ -15,7 +15,7 @@ export const Layout: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'reflections', 'events', 'services', 'community'];
-      
+
       // Find the current section
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -26,9 +26,9 @@ export const Layout: React.FC = () => {
             setActiveTab(section as Tab);
             break;
           } else if (rect.top < 0 && rect.bottom > 100) {
-             // Case where the section takes up most of the screen but top is scrolled past
-             setActiveTab(section as Tab);
-             break;
+            // Case where the section takes up most of the screen but top is scrolled past
+            setActiveTab(section as Tab);
+            break;
           }
         }
       }
@@ -49,24 +49,24 @@ export const Layout: React.FC = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Top Navigation for Desktop */}
       <TopNav activeTab={activeTab} setActiveTab={handleNavClick} />
-      
+
       {/* Mobile Top Header */}
       <div className="md:hidden px-4 py-4 flex items-center justify-between bg-white border-b border-slate-100 sticky top-0 z-40 shadow-sm">
-        <div className="flex items-center gap-2" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <div className="w-8 h-8 bg-church-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
+        <div className="flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="w-8 h-8 bg-church-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">
             G
-            </div>
-            <span className="font-bold text-slate-800">Gracia y Amor</span>
+          </div>
+          <span className="font-bold text-slate-800">Gracia y Amor</span>
         </div>
         <div className="text-xs font-bold text-church-600 bg-church-50 px-2 py-1 rounded border border-church-100">
-            FEB 2026
+          FEB 2026
         </div>
       </div>
-      
+
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-8">
-        
+
         {/* Sections Stacked Vertically with whitespace instead of borders */}
-        
+
         <section id="home" className="pt-6 md:pt-10 scroll-mt-24 min-h-[50vh]">
           <HomeView />
         </section>
@@ -74,10 +74,7 @@ export const Layout: React.FC = () => {
         <div className="my-12 md:my-24" />
 
         <section id="reflections" className="scroll-mt-24 min-h-[50vh]">
-           <div className="mb-8">
-            <h2 className="text-sm font-bold text-church-600 uppercase tracking-widest mb-2">Edificación</h2>
-            <h3 className="text-3xl font-bold text-slate-900">Reflexiones y Estudios</h3>
-          </div>
+
           <ReflectionsView />
         </section>
 
